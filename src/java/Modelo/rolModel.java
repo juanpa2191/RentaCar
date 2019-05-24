@@ -10,10 +10,18 @@ package Modelo;
  * @author Juan Pablo Ospina
  */
 public class rolModel {
-    
+    long id;
     String nombreRol;
     String fechaCreacion;
     String activo;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getNombreRol() {
         return nombreRol;
