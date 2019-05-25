@@ -37,7 +37,7 @@
                                 <td>${dato.fecha_creacion}</td>
                                 <td>${dato.activo}</td>
                                 <td>
-                                    <a class="btn btn-warning">Editar</a>
+                                    <a href="editarTipoAuto.htm?id=${dato.id_tipo}" class="btn btn-warning">Editar</a>
                                     <a class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>

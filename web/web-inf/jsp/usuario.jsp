@@ -48,7 +48,7 @@
                                 <td>${dato.activo}</td>
                                 <td>${dato.nombre_rol}</td>
                                 <td>
-                                    <a class="btn btn-warning">Editar</a>
+                                    <a href="editarUsuario.htm?id=${dato.id_usuario}" class="btn btn-warning">Editar</a>
                                     <a class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>

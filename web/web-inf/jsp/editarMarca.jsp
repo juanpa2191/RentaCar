@@ -1,11 +1,11 @@
 <%-- 
-    Document   : agregarRol
-    Created on : 17/05/2019, 01:01:32 AM
-    Author     : santi
+    Document   : editarMarca
+    Created on : 24/05/2019, 05:07:15 PM
+    Author     : Juan Pablo Ospina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,21 +16,16 @@
     <div class="container mt-4 col-lg-4">
         <div class="card border-info">
             <div class="card-header bg-info">
-                <h4>editar rol</h4>
+                <h4>editar marca</h4>
             </div>
             <div class="card-body">
                 <form method="post">
                     <label>Nombre</label>
-                    <input type="text" name="nombreRol" value="${lista[0].nombre_tipo}" class="form-control">
+                    <input type="text" name="nombre_marca" value="${lista[0].nombre_marca}" class="form-control">
                     <label>Fecha</label>
-                    <input type="text" name="fechaCreacion" value="${lista[0].fecha_creacion}" class="form-control">
-                    <label>Activo</label>
-                      <select name="activo" class="form-control">
-                          <option value="si">Si</option>
-                          <option value="no">No</option>
-                     </select>
+                    <input type="text" name="fecha_creacion" value="${lista[0].fecha_creacion}" class="form-control">
                     <input type="submit" value="Enviar" class="btn btn-block btn-primary  mt-2">
-                    <a href="tipoauto.htm" class="mt-2">Regresar</a>
+                    <a href="marca.htm" class="mt-2">Regresar</a>
                 </form>
             </div>
         </div>

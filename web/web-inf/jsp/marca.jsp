@@ -32,7 +32,7 @@
                                 <td>${dato.fecha_creacion}</td>
                                 <td>${dato.activo}</td>
                                 <td>
-                                    <a class="btn btn-warning">Editar</a>
+                                    <a href="editarMarca.htm?id=${dato.id_marca}" class="btn btn-warning">Editar</a>
                                     <a class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>

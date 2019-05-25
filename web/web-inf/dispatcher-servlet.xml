@@ -33,6 +33,9 @@
                 <prop key="renta.htm">controlador</prop>
                 <prop key="agregarRenta.htm">controlador</prop>
                 <prop key="editarRol.htm">controlador</prop>
+                <prop key="editarTipoAuto.htm">controlador</prop>
+                <prop key="editarUsuario.htm">controlador</prop>
+                <prop key="editarMarca.htm">controlador</prop>
             </props>
         </property>
     </bean>

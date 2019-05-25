@@ -1,11 +1,11 @@
 <%-- 
-    Document   : agregarRol
-    Created on : 17/05/2019, 01:01:32 AM
-    Author     : santi
+    Document   : editarTipoAuto
+    Created on : 24/05/2019, 03:50:56 PM
+    Author     : Juan Pablo Ospina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,12 +16,12 @@
     <div class="container mt-4 col-lg-4">
         <div class="card border-info">
             <div class="card-header bg-info">
-                <h4>editar rol</h4>
+                <h4>editar tipo de auto</h4>
             </div>
             <div class="card-body">
                 <form method="post">
                     <label>Nombre</label>
-                    <input type="text" name="nombreRol" value="${lista[0].nombre_tipo}" class="form-control">
+                    <input type="text" name="nombreTipo" value="${lista[0].nombre_tipo}" class="form-control">
                     <label>Fecha</label>
                     <input type="text" name="fechaCreacion" value="${lista[0].fecha_creacion}" class="form-control">
                     <label>Activo</label>

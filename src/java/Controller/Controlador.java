@@ -180,23 +180,77 @@ public class Controlador {
         mav.addObject(new rentaModel());
         return new ModelAndView("redirect:/renta.htm");
     }
-    
+
     @RequestMapping(value = "editarRol.htm", method = RequestMethod.GET)
     public ModelAndView EditarRol(HttpServletRequest request) {
         id = Integer.parseInt(request.getParameter("id"));
-        String sql = "select * from rol where id_rol = "+id;
+        String sql = "select * from rol where id_rol = " + id;
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("lista", datos);
         mav.setViewName("editarRol");
         return mav;
     }
-    
+
     @RequestMapping(value = "editarRol.htm", method = RequestMethod.POST)
     public ModelAndView EditarRol(rolModel a) {
         String sql = "update rol set nombre_rol = ?, fecha_creacion = ?, activo = ? where id_rol = ?";
         this.jdbcTemplate.update(sql, a.getNombreRol(), a.getFechaCreacion(), a.getActivo(), a.getId());
-        mav.addObject(new rentaModel());
+        mav.addObject(new rolModel());
         return new ModelAndView("redirect:/rol.htm");
+    }
+
+    @RequestMapping(value = "editarTipoAuto.htm", method = RequestMethod.GET)
+    public ModelAndView EditarTipoAuto(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "select * from tipo where id_tipo = " + id;
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("lista", datos);
+        mav.setViewName("editarTipoAuto");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarTipoAuto.htm", method = RequestMethod.POST)
+    public ModelAndView EditarRol(tipoModel a) {
+        String sql = "update rol set nombre_tipo = ?, fecha_creacion = ?, activo = ? where id_tipo = ?";
+        this.jdbcTemplate.update(sql, a.getNombreTipo(), a.getFechaCreacion(), a.getActivo(), a.getIdTipo());
+        mav.addObject(new tipoModel());
+        return new ModelAndView("redirect:/tipoauto.htm");
+    }
+
+    @RequestMapping(value = "editarUsuario.htm", method = RequestMethod.GET)
+    public ModelAndView EditarUsuario(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "select * from usuario where id_usuario = " + id;
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("lista", datos);
+        mav.setViewName("editarUsuario");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarUsuario.htm", method = RequestMethod.POST)
+    public ModelAndView EditarRol(usuarioModel a) {
+        String sql = "update usuario set user_name = ?, contrasena = ?, nombre = ?, apellido = ?, fecha_nacimiento = ?, direccion = ?, telefono = ?, correo = ?  where id_usuario = ?";
+        this.jdbcTemplate.update(sql, a.getUser_name(), a.getContrasena(), a.getNombre(), a.getApellido(), a.getFecha_nacimiento(), a.getDireccion(), a.getTelefono(), a.getCorreo(), a.getId_usuario());
+        mav.addObject(new tipoModel());
+        return new ModelAndView("redirect:/usuario.htm");
+    }
+
+    @RequestMapping(value = "editarMarca.htm", method = RequestMethod.GET)
+    public ModelAndView EditarMarca(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "select * from marca where id_marca = " + id;
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("lista", datos);
+        mav.setViewName("editarMarca");
+        return mav;
+    }
+
+    @RequestMapping(value = "editarMarca.htm", method = RequestMethod.POST)
+    public ModelAndView EditarMarca(marcaModel a) {
+        String sql = "update marca set nombre_marca = ?, fecha_creacion = ?  where id_marca = ?";
+        this.jdbcTemplate.update(sql, a.getNombre_marca(), a.getFecha_creacion(), a.getId_marca());
+        mav.addObject(new marcaModel());
+        return new ModelAndView("redirect:/marca.htm");
     }
 
 }
