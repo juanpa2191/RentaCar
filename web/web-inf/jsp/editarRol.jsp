@@ -21,7 +21,7 @@
             <div class="card-body">
                 <form method="post">
                     <label>Nombre</label>
-                    <input type="text" name="nombreRol" value="${lista[0].nombre_tipo}" class="form-control">
+                    <input type="text" name="nombreRol" value="${lista[0].nombre_rol}" class="form-control">
                     <label>Fecha</label>
                     <input type="text" name="fechaCreacion" value="${lista[0].fecha_creacion}" class="form-control">
                     <label>Activo</label>

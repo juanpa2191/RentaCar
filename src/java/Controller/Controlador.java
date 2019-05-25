@@ -252,5 +252,13 @@ public class Controlador {
         mav.addObject(new marcaModel());
         return new ModelAndView("redirect:/marca.htm");
     }
+    
+    @RequestMapping(value = "eliminarRol.htm")
+    public ModelAndView EliminarRol(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "delete from rol where id_rol = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/rol.htm");
+    }
 
 }

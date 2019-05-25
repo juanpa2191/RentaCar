@@ -35,7 +35,7 @@
                                 <td>${dato.activo}</td>
                                 <td>
                                     <a href="editarRol.htm?id=${dato.id_rol}" class="btn btn-warning">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a href="eliminarRol.htm?id=${dato.id_rol}" class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                             </c:forEach>

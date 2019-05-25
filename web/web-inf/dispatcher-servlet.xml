@@ -36,6 +36,7 @@
                 <prop key="editarTipoAuto.htm">controlador</prop>
                 <prop key="editarUsuario.htm">controlador</prop>
                 <prop key="editarMarca.htm">controlador</prop>
+                <prop key="eliminarRol.htm">controlador</prop>
             </props>
         </property>
     </bean>
