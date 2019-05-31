@@ -338,5 +338,13 @@ public class Controlador {
         this.jdbcTemplate.update(sql, a.getPrecio(), a.getFecha_alquiler(), a.getId_automovil(), a.getId_usuario(), id);
         return new ModelAndView("redirect:/renta.htm");
     }
+    
+    @RequestMapping(value = "eliminarRenta.htm")
+    public ModelAndView EliminarRenta(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "DELETE FROM renta WHERE id_renta = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/renta.htm");
+    }
 
 }

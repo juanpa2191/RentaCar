@@ -34,7 +34,7 @@
                                 <td>${dato.user_name}</td>
                                 <td>
                                     <a class="btn btn-warning" href="editarRenta.htm?id=${dato.id_renta}">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a class="btn btn-danger" href="eliminarRenta.htm?id=${dato.id_renta}">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>

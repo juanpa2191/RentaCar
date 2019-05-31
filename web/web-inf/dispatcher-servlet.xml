@@ -43,6 +43,7 @@
                 <prop key="eliminarUsuario.htm">controlador</prop>
                 <prop key="eliminarMarca.htm">controlador</prop>
                 <prop key="editarRenta.htm">controlador</prop>
+                <prop key="eliminarRenta.htm">controlador</prop>
             </props>
         </property>
     </bean>
