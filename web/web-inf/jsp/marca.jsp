@@ -42,5 +42,8 @@
                 </div>
             </div>
         </div>
+        <div class="container mt-2">
+            <a href="index.htm" class="btn btn-primary">Regresar al menu principal</a>
+        </div>
     </body>
 </html>

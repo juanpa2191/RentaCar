@@ -43,6 +43,10 @@
                     </table>
                 </div>
             </div>
+        <div class="container col-12 mt-2">
+          <a href="index.htm" class="btn btn-primary">Regresar al menu principal</a>
         </div>
+        </div>
+
     </body>
 </html>

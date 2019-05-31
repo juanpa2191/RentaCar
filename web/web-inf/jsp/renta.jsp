@@ -9,7 +9,7 @@
     </head>
 
     <body>
-            <div class="card border-info">
+            <div class=" container card border-info mt-5">
                 <div class="card-header bg-info text-white">
                     <a class="btn btn-light" href="agregarRenta.htm">Registrar nuevo alquiler</a>
                 </div>
@@ -41,6 +41,11 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
+                <div class="container mt-2">
+                    <a href="index.htm" class="btn btn-primary">Regresar al menu principal</a>
+                </div>
+
     </body>
 </html>
