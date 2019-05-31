@@ -284,5 +284,29 @@ public class Controlador {
         this.jdbcTemplate.update(sql);
         return new ModelAndView("redirect:/marca.htm");
     }
+    
+    @RequestMapping(value = "editarAutomovil.htm", method = RequestMethod.GET)
+    public ModelAndView EditarAutomovil(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "select * from automovil where id_automovil = " + id;
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosAutomovil", datos);
+        sql = "select * from marca";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosMarca", datos);
+        sql = "select * from tipo";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosTipo", datos);
+        mav.setViewName("editarAutomovil");
+        return mav;
+    }
+    
+    @RequestMapping(value = "editarAutomovil.htm", method = RequestMethod.POST)
+    public ModelAndView EditarAutomovil(automovilModel a) {
+        String sql = "UPDATE automovil SET gama = ?, fecha_creacion = ?, precio = ?, ocupado = ?, activo = ?, id_marca = ?, id_tipo = ? WHERE id_automovil = ?";
+        this.jdbcTemplate.update(sql, a.getGama(), a.getFecha_creacion(), a.getPrecio(), a.getOcupado(), a.getActivo(), a.getId_marca(), a.getId_tipo(), id);
+        return new ModelAndView("redirect:/automovil.htm");
+    }
+
 
 }

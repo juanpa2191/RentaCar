@@ -15,24 +15,23 @@
                 </div>
                 <div class="card-body mx-y">
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/rol.htm" class="btn btn-block bg-primary text-white mb-2">Registrar un nuevo rol</a>
+                      <a href="rol.htm" class="btn btn-block bg-primary text-white mb-2">Registrar un nuevo rol</a>
                     </div>
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/tipoauto.htm" class="btn btn-block bg-success text-white mb-2">Registrar un nuevo tipo de auto</a>
+                      <a href="tipoauto.htm" class="btn btn-block bg-success text-white mb-2">Registrar un nuevo tipo de auto</a>
                     </div>
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/usuario.htm" class="btn btn-block bg-dark text-white mb-2">Registrar un nuevo Usuario</a>
+                      <a href="usuario.htm" class="btn btn-block bg-dark text-white mb-2">Registrar un nuevo Usuario</a>
                     </div>
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/marca.htm" class="btn btn-block bg-secondary text-white mb-2">Registrar una nueva marca</a>
+                      <a href="marca.htm" class="btn btn-block bg-secondary text-white mb-2">Registrar una nueva marca</a>
                     </div>
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/automovil.htm" class="btn btn-block bg-warning text-white mb-2">Registrar un nuevo automovil</a>
+                      <a href="automovil.htm" class="btn btn-block bg-warning text-white mb-2">Registrar un nuevo automovil</a>
                     </div>
                     <div class="form-group">
-                      <a href="/RentACar_Clase12/renta.htm" class="btn btn-block bg-dark text-white mb-2">Registrar una nueva renta</a>
+                      <a href="renta.htm" class="btn btn-block bg-dark text-white mb-2">Registrar una nueva renta</a>
                     </div>
-
                 </div>
               </div>
           </div>

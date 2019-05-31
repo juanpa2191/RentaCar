@@ -16,16 +16,16 @@
     <div class="container mt-4 col-lg-4">
         <div class="card border-info">
             <div class="card-header bg-info">
-                <h4>Agregar nuevo automovil</h4>
+                <h4>Editar Automovil</h4>
             </div>
             <div class="card-body">
                 <form method="post">
                     <label>Gama</label>
-                    <input type="text" name="gama" id="" class="form-control">
+                    <input type="text" name="gama" id="" class="form-control" value="${datosAutomovil[0].gama}">
                     <label>Fecha</label>
-                    <input type="text" name="fecha_creacion" id="" class="form-control">
+                    <input type="text" name="fecha_creacion" id="" class="form-control" value="${datosAutomovil[0].fecha_creacion}">
                     <label>Precio</label>
-                    <input type="text" name="precio" id="" class="form-control">
+                    <input type="text" name="precio" id="" class="form-control" value="${datosAutomovil[0].precio}">
                     <label>Ocupado</label>
                       <select name="ocupado" class="form-control">
                           <option value="si">Si</option>
@@ -38,7 +38,7 @@
                      </select>
                     <label>Marca</label>
                     <select name="id_marca" class="form-control mb-3">
-                       <c:forEach var="dato" items="${listaMarca}">
+                       <c:forEach var="dato" items="${datosMarca}">
                            <option value="${dato.id_marca}">
                                 ${dato.nombre_marca}
                            </option>
@@ -46,7 +46,7 @@
                     </select>
                       <label>Tipo</label>
                     <select name="id_tipo" class="form-control mb-3">
-                       <c:forEach var="dato" items="${listaTipo}">
+                       <c:forEach var="dato" items="${datosTipo}">
                            <option value="${dato.id_tipo}">
                                 ${dato.nombre_tipo}
                            </option>
