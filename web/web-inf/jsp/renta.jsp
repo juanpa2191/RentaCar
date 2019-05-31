@@ -33,7 +33,7 @@
                                 <td>${dato.nombre_marca}</td>
                                 <td>${dato.user_name}</td>
                                 <td>
-                                    <a class="btn btn-warning">Editar</a>
+                                    <a class="btn btn-warning" href="editarRenta.htm?id=${dato.id_renta}">Editar</a>
                                     <a class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>

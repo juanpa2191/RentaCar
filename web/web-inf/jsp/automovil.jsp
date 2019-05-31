@@ -45,7 +45,7 @@
                                 <td>${dato.nombre_tipo}</td>
                                 <td>
                                     <a class="btn btn-warning" href="editarAutomovil.htm?id=${dato.id_automovil}">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a class="btn btn-danger" href="eliminarAutomovil.htm?id=${dato.id_automovil}">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>

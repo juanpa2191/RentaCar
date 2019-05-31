@@ -308,5 +308,35 @@ public class Controlador {
         return new ModelAndView("redirect:/automovil.htm");
     }
 
+    @RequestMapping(value = "eliminarAutomovil.htm")
+    public ModelAndView EliminarAutomovil(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "DELETE FROM automovil WHERE id_automovil = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/automovil.htm");
+    }
+    
+    @RequestMapping(value = "editarRenta.htm", method = RequestMethod.GET)
+    public ModelAndView EditarRenta(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "SELECT * FROM renta WHERE id_renta = " + id;
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosRenta", datos);
+        sql = "select a.id_automovil, a.gama, a.precio, m.nombre_marca from automovil a INNER JOIN marca m ON a.id_marca = m.id_marca";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosAutomovil", datos);
+        sql = "SELECT * FROM usuario";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datosCliente", datos);
+        mav.setViewName("editarRenta");
+        return mav;
+    }
+    
+    @RequestMapping(value = "editarRenta.htm", method = RequestMethod.POST)
+    public ModelAndView EditarRenta(rentaModel a) {
+        String sql = "UPDATE renta SET precio = ?, fecha_alquiler = ?, id_automovil = ?, id_usuario = ? WHERE id_renta = ?";
+        this.jdbcTemplate.update(sql, a.getPrecio(), a.getFecha_alquiler(), a.getId_automovil(), a.getId_usuario(), id);
+        return new ModelAndView("redirect:/renta.htm");
+    }
 
 }
