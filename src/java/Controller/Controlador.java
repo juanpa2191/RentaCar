@@ -194,7 +194,7 @@ public class Controlador {
     @RequestMapping(value = "editarRol.htm", method = RequestMethod.POST)
     public ModelAndView EditarRol(rolModel a) {
         String sql = "update rol set nombre_rol = ?, fecha_creacion = ?, activo = ? where id_rol = ?";
-        this.jdbcTemplate.update(sql, a.getNombreRol(), a.getFechaCreacion(), a.getActivo(), a.getId());
+        this.jdbcTemplate.update(sql, a.getNombreRol(), a.getFechaCreacion(), a.getActivo(), id);
         mav.addObject(new rolModel());
         return new ModelAndView("redirect:/rol.htm");
     }
@@ -211,8 +211,8 @@ public class Controlador {
 
     @RequestMapping(value = "editarTipoAuto.htm", method = RequestMethod.POST)
     public ModelAndView EditarRol(tipoModel a) {
-        String sql = "update rol set nombre_tipo = ?, fecha_creacion = ?, activo = ? where id_tipo = ?";
-        this.jdbcTemplate.update(sql, a.getNombreTipo(), a.getFechaCreacion(), a.getActivo(), a.getIdTipo());
+        String sql = "update tipo set nombre_tipo = ?, fecha_creacion = ?, activo = ? where id_tipo = ?";
+        this.jdbcTemplate.update(sql, a.getNombreTipo(), a.getFechaCreacion(), a.getActivo(), id);
         mav.addObject(new tipoModel());
         return new ModelAndView("redirect:/tipoauto.htm");
     }
@@ -230,7 +230,7 @@ public class Controlador {
     @RequestMapping(value = "editarUsuario.htm", method = RequestMethod.POST)
     public ModelAndView EditarRol(usuarioModel a) {
         String sql = "update usuario set user_name = ?, contrasena = ?, nombre = ?, apellido = ?, fecha_nacimiento = ?, direccion = ?, telefono = ?, correo = ?  where id_usuario = ?";
-        this.jdbcTemplate.update(sql, a.getUser_name(), a.getContrasena(), a.getNombre(), a.getApellido(), a.getFecha_nacimiento(), a.getDireccion(), a.getTelefono(), a.getCorreo(), a.getId_usuario());
+        this.jdbcTemplate.update(sql, a.getUser_name(), a.getContrasena(), a.getNombre(), a.getApellido(), a.getFecha_nacimiento(), a.getDireccion(), a.getTelefono(), a.getCorreo(), id);
         mav.addObject(new tipoModel());
         return new ModelAndView("redirect:/usuario.htm");
     }
@@ -248,7 +248,7 @@ public class Controlador {
     @RequestMapping(value = "editarMarca.htm", method = RequestMethod.POST)
     public ModelAndView EditarMarca(marcaModel a) {
         String sql = "update marca set nombre_marca = ?, fecha_creacion = ?  where id_marca = ?";
-        this.jdbcTemplate.update(sql, a.getNombre_marca(), a.getFecha_creacion(), a.getId_marca());
+        this.jdbcTemplate.update(sql, a.getNombre_marca(), a.getFecha_creacion(), id);
         mav.addObject(new marcaModel());
         return new ModelAndView("redirect:/marca.htm");
     }
@@ -259,6 +259,30 @@ public class Controlador {
         String sql = "delete from rol where id_rol = " + id;
         this.jdbcTemplate.update(sql);
         return new ModelAndView("redirect:/rol.htm");
+    }
+    
+    @RequestMapping(value = "eliminarTipoAuto.htm")
+    public ModelAndView EliminarTipoAuto(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "delete from tipo where id_tipo = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/tipoauto.htm");
+    }
+    
+    @RequestMapping(value = "eliminarUsuario.htm")
+    public ModelAndView EliminarUsuario(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "delete from usuario where id_usuario = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/usuario.htm");
+    }
+    
+    @RequestMapping(value = "eliminarMarca.htm")
+    public ModelAndView EliminarMarca(HttpServletRequest request) {
+        id = Integer.parseInt(request.getParameter("id"));
+        String sql = "delete from marca where id_marca = " + id;
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/marca.htm");
     }
 
 }

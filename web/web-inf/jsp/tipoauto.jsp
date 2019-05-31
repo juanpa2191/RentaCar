@@ -38,7 +38,7 @@
                                 <td>${dato.activo}</td>
                                 <td>
                                     <a href="editarTipoAuto.htm?id=${dato.id_tipo}" class="btn btn-warning">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a href="eliminarTipoAuto.htm?id=${dato.id_tipo}" class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>

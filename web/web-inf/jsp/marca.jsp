@@ -33,7 +33,7 @@
                                 <td>${dato.activo}</td>
                                 <td>
                                     <a href="editarMarca.htm?id=${dato.id_marca}" class="btn btn-warning">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a href="eliminarMarca.htm?id=${dato.id_marca}" class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>

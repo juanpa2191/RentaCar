@@ -49,7 +49,7 @@
                                 <td>${dato.nombre_rol}</td>
                                 <td>
                                     <a href="editarUsuario.htm?id=${dato.id_usuario}" class="btn btn-warning">Editar</a>
-                                    <a class="btn btn-danger">Borrar</a>
+                                    <a href="eliminarUsuario.htm?id=${dato.id_usuario}" class="btn btn-danger">Borrar</a>
                                 </td>
                             </tr>
                         </c:forEach>
